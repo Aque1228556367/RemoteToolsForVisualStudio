@@ -14,5 +14,6 @@ http://msdn.microsoft.com/zh-cn/library/dwtd01y4.aspx
 RemoteBuild_src
 CSDN 上一个作者的代码，经过整理已经能实现自动上传代码到指定的Linux主机路径
 
-VSMediaPlayer2.zip
-CodeProject 上的一个例子，但是只能在 VS2005/VS2008 下运行
+尝试用 C++/ATL 的方式开发供 Visual Studio 使用的外接程序。
+增加一个 MS 官方提供的例程供参考
+源地址：http://www.microsoft.com/en-us/download/details.aspx?id=9122
