@@ -1,0 +1,54 @@
+HKCR
+{
+	CPPToolWindow.Connect.1 = s 'Connect Class'
+	{
+		CLSID = s '{2B2E3D31-ACD5-4F8F-92CB-5552E3CC4E91}'
+	}
+	CPPToolWindow.Connect = s 'Connect Class'
+	{
+		CLSID = s '{2B2E3D31-ACD5-4F8F-92CB-5552E3CC4E91}'
+		CurVer = s 'CPPToolWindow.Connect.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove '{2B2E3D31-ACD5-4F8F-92CB-5552E3CC4E91}' = s 'Connect Class'
+		{
+			ProgID = s 'CPPToolWindow.Connect.1'
+			VersionIndependentProgID = s 'CPPToolWindow.Connect'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{4E41F7BB-D971-4632-936B-5BFEB1CDEB43}'
+		}
+	}
+}
+
+HKCU
+{
+	NoRemove 'SOFTWARE'
+	{
+		NoRemove 'Microsoft'
+		{
+			NoRemove 'VisualStudio'
+			{
+				NoRemove '11.0'
+				{
+					NoRemove 'AddIns'
+					{
+						ForceRemove 'CPPToolWindow.Connect'
+						{
+							val LoadBehavior = d 0
+							val CommandLineSafe = d 0
+							val CommandPreload = d 0
+							val FriendlyName = s 'ToolWindow'
+							val Description = s 'Visual Studio Add-in implemented using C++ to create a tool window'
+						}
+					}
+				}
+			}
+		}
+	}
+
+}

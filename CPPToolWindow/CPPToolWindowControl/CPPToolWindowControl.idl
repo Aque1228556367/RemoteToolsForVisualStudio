@@ -1,0 +1,39 @@
+// CPPToolWindowControl.idl : IDL source for CPPToolWindowControl
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (CPPToolWindowControl.tlb) and marshalling code.
+
+#include "olectl.h"
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(66FC297E-0CB3-4C2F-A01C-381DDC4E96D2),
+	dual,
+	nonextensible,
+	helpstring("IToolWindowControl Interface"),
+	pointer_default(unique)
+]
+interface IToolWindowControl : IDispatch{
+};
+
+[
+	uuid(C07B3135-4A29-4241-ADB3-0E7AB0721623),
+	version(1.0),
+	helpstring("CPPToolWindowControl 1.0 Type Library")
+]
+library CPPToolWindowControlLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(86BA4EFB-0640-4E6F-AE47-E00EB0F69B7B),
+		control,
+		helpstring("ToolWindowControl Class")
+	]
+	coclass ToolWindowControl
+	{
+		[default] interface IToolWindowControl;
+	};
+};

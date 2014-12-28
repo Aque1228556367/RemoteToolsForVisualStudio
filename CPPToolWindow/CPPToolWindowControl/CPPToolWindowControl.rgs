@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'CPPToolWindowControl'
+		'CPPToolWindowControl.DLL'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+}

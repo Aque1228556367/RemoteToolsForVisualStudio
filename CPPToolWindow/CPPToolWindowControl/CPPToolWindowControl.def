@@ -1,0 +1,9 @@
+; CPPToolWindowControl.def : Declares the module parameters.
+
+LIBRARY      "CPPToolWindowControl.DLL"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE

@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPPToolWindow", "CPPToolWindow\CPPToolWindow.vcxproj", "{731012DC-0E0C-4EA2-A7D6-CD84A5D49A01}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPPToolWindowControl", "CPPToolWindowControl\CPPToolWindowControl.vcxproj", "{34830AEF-C5BB-4230-8923-6B2E0CC5D456}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPPToolWindowControlPS", "CPPToolWindowControl\CPPToolWindowControlPS.vcxproj", "{C32C3860-DD3D-4810-97CB-10DEE7C6F57B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{731012DC-0E0C-4EA2-A7D6-CD84A5D49A01}.Debug|Win32.ActiveCfg = Debug|Win32
+		{731012DC-0E0C-4EA2-A7D6-CD84A5D49A01}.Debug|Win32.Build.0 = Debug|Win32
+		{731012DC-0E0C-4EA2-A7D6-CD84A5D49A01}.Release|Win32.ActiveCfg = Release|Win32
+		{731012DC-0E0C-4EA2-A7D6-CD84A5D49A01}.Release|Win32.Build.0 = Release|Win32
+		{34830AEF-C5BB-4230-8923-6B2E0CC5D456}.Debug|Win32.ActiveCfg = Debug|Win32
+		{34830AEF-C5BB-4230-8923-6B2E0CC5D456}.Debug|Win32.Build.0 = Debug|Win32
+		{34830AEF-C5BB-4230-8923-6B2E0CC5D456}.Release|Win32.ActiveCfg = Release|Win32
+		{34830AEF-C5BB-4230-8923-6B2E0CC5D456}.Release|Win32.Build.0 = Release|Win32
+		{C32C3860-DD3D-4810-97CB-10DEE7C6F57B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C32C3860-DD3D-4810-97CB-10DEE7C6F57B}.Release|Win32.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

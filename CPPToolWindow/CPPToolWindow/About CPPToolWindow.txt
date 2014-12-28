@@ -1,0 +1,48 @@
+关于 CPPToolWindow 工程的说明：
+【打开工程的方式】
+必须以管理员方式打开 VisualStudio，否则会导致注册信息到注册表失败。
+
+【VS2012 下项目的属性设置】
+“项目属性”→“调试”→“命令”
+填写的 Visual Studio 可执行文件路径，如：
+D:\ProgrammingTools\IDE\Microsoft Visual Studio 11.0\Common7\IDE\devenv.exe
+
+“C/C++”→“常规”→“附加包含目录”：
+$(MSBuildExtensionsPath32)\..\Common Files\Microsoft Shared\MSEnv;
+$(MSBuildExtensionsPath32)\..\Common Files\Designer;
+$(WindowsSDK_IncludePath);%(AdditionalIncludeDirectories)
+
+“C/C++”→“常规”→“调试信息格式”：
+用于“编辑并继续”的程序数据库(/ZI)
+
+【关于注册表信息文件 AddIn.rgs】
+HKCU 选项中，要把 NoRemove 对应版本号那一项改成你现在的 Visual Studio 版本
+如 VS2012 的为 NoRemove '11.0'，
+否则你的 Visual Studio 在“工具”→“外接程序管理器”列表中显示不出来（无法识别）
+
+“外接程序管理器”列表中的插件名，是 HKCU 中属性“FriendlyName”对应的名字
+如果想更换这个名字，必须先手动删除注册表中旧的注册信息，然后再重新生成解决方案。
+此时会发现在注册表中
+HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\11.0\AddIns\CPPToolWindow.Connect
+会重新生成一个注册表信息，此时重新打开 Visual Studio，可以在“外接程序管理器”列表中显示你更改后的名字
+
+此时在“外接程序管理器”中对你的插件进行勾选，即可看到效果，本例是出现一个标题为“C++ Tool Window”的小窗口，
+中间有“Click Me！”字样，点击会出现“Hello World”的提示框。
+
+如果想调试代码，在“外接程序管理器”中的“可用外接程序”中“启动”一栏进行勾选，然后启动调试，
+会打开一个新的 Visual Studio 进程，在 Connect() 函数下断点，此时就可以进入到断点中去进行调试。
+
+【VS编译器版本】
+_MSC_VER是MSVC编译器的内置宏，定义了编译器的版本，_MSC_VER 值对应版本关系
+
+MSVC++ 11.0 _MSC_VER = 1700 (Visual Studio 2012)  
+MSVC++ 10.0 _MSC_VER = 1600 (Visual Studio 2010) 
+MSVC++ 9.0 _MSC_VER = 1500  (Visual Studio 2008)  
+MSVC++ 8.0 _MSC_VER = 1400  (Visual Studio 2005)  
+MSVC++ 7.1 _MSC_VER = 1310  (Visual Studio 2003) 
+MSVC++ 7.0 _MSC_VER = 1300 (Visual Studio 2002) 
+MSVC++ 6.0 _MSC_VER = 1200  
+MSVC++ 5.0 _MSC_VER = 1100
+
+【正确的效果】
+可以在“工具”→“外接程序管理器”列表中找到

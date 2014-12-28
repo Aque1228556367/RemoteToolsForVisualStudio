@@ -1,0 +1,42 @@
+关于 CPPToolWindowControl 工程的说明：
+【打开工程的方式】
+必须以管理员方式打开 VisualStudio，否则会导致注册信息到注册表失败。
+
+本工程本来和 CPPToolWindow 工程一样也要用预编译头，但是由于 CPPToolWindowControl_i.c 文件
+用 C++ 的预编译头编不过，在工程属性的“C/C++”中，选择“不使用预编译头”，
+经测试，不影响编译和运行结果。
+注意：不要去掉原来的 stdafx.h/.cpp 文件。经测试可将这两个文件从工程中排除，但是不能删掉这两个文件
+
+【VS2012 下项目的属性设置】
+“项目属性”→“调试”→“命令”
+填写的 Visual Studio 可执行文件路径，如：
+D:\ProgrammingTools\IDE\Microsoft Visual Studio 11.0\Common7\IDE\devenv.exe
+
+“C/C++”→“常规”→“附加包含目录”：
+$(MSBuildExtensionsPath32)\..\Common Files\Microsoft Shared\MSEnv;
+$(MSBuildExtensionsPath32)\..\Common Files\Designer;
+$(WindowsSDK_IncludePath);%(AdditionalIncludeDirectories)
+
+“C/C++”→“常规”→“调试信息格式”：
+用于“编辑并继续”的程序数据库(/ZI)
+
+【关于注册表信息文件 ToolWindowControl.rgs】
+如果编译并注册成功，并不像 CPPToolWindow 会在注册表注册一个项
+把鼠标移动到“解决方案资源管理器”的文件图标上，会出现一个小图标。
+
+如果想进行修改并重新编译，需先关闭工程，这样才能删除 ToolWindowControl.dll 文件
+
+【VS编译器版本】
+_MSC_VER是MSVC编译器的内置宏，定义了编译器的版本，_MSC_VER 值对应版本关系
+
+MSVC++ 11.0 _MSC_VER = 1700 (Visual Studio 2012)  
+MSVC++ 10.0 _MSC_VER = 1600 (Visual Studio 2010) 
+MSVC++ 9.0 _MSC_VER = 1500  (Visual Studio 2008)  
+MSVC++ 8.0 _MSC_VER = 1400  (Visual Studio 2005)  
+MSVC++ 7.1 _MSC_VER = 1310  (Visual Studio 2003) 
+MSVC++ 7.0 _MSC_VER = 1300 (Visual Studio 2002) 
+MSVC++ 6.0 _MSC_VER = 1200  
+MSVC++ 5.0 _MSC_VER = 1100
+
+【正确的效果】
+可以在“工具”→“外接程序管理器”列表中找到
